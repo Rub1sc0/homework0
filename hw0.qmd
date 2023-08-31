@@ -1,0 +1,33 @@
+---
+title: "260HW0"
+format: html
+editor: visual
+execute: 
+  echo: false
+---
+
+# Exercises
+
+(1) For variables $a=1, b=3, c=2$, the solutions to $f(x) = ax^2+bx+c=0$ is:
+
+```{r}
+a = 1
+b = 3
+c = 2
+if (b^2 - 4*a*c < 0){
+  print("Has no real solutions")} else if (b^2 - 4*a*c == 0){print(paste("The only solution is", -b/2*a))} else {
+  temp = b^2 - 4*a*c
+  tempsq = sqrt(temp)
+  ans1 = (-b + tempsq)/(2*a)
+  ans2 = (-b - tempsq)/(2*a)
+  print(paste("The first solution is", ans1))
+  print(paste("The second solution is", ans2))}
+```
+
+(2) A graph of $f(x)$ versus $x$ for $x \in (-4,2)$.
+
+```{r}
+x = seq(-4,2,0.01)
+plot(x,a*x^2+b*x+c, type = "l")
+abline(h = 0, lty = 2)
+```
